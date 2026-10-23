@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta property="og:title" content="Kelvin Joshua Manlapig | IT Portfolio">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#173f35">
+<meta name="description" content="Portfolio of Kelvin Joshua Manlapig — IT Support, IT Engineering, Networking, Systems Administration, and Backend Development.">
+<title>Kelvin Joshua Manlapig | IT Portfolio</title>
+<style>
+:root {
+  --site-primary: #173f35;
+  --site-secondary: #e7eee8;
+  --site-background: #f7f8f4;
+  --site-on-primary: #ffffff;
+  --site-on-secondary: #173f35;
+  --site-on-background: #17251f;
+  --site-font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --site-font-heading: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --site-heading-scale: 1;
+  --site-spacing-scale: 1;
+  --site-radius-scale: 1;
+  --site-decoration-opacity: 1;
+  --surface: light-dark(#ffffff, #1d2622);
+  --muted: light-dark(#5b6a62, #b6c3bb);
+  --line: light-dark(#dce4dd, #3b4941);
+  --accent: #c7e36b;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light dark; }
+body { margin: 0; font-family: var(--site-font-body); background: var(--site-background); color: var(--site-on-background); }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+#site-root { background-color: var(--site-background); color: var(--site-on-background); min-height: 100vh; border-radius: 0; overflow: hidden; }
+.container { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+header { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(14px); background: light-dark(rgba(247,248,244,.91), rgba(23,32,27,.91)); border-bottom: 1px solid var(--line); }
+.nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { font-weight: 850; letter-spacing: -.06em; font-size: 1.08rem; }
+.brand span { color: var(--site-primary); }
+nav { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: .92rem; }
+nav a:hover { color: var(--site-on-background); }
+.nav-cta, .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 13px 18px; border-radius: calc(12px * var(--site-radius-scale)); background: var(--site-primary); color: var(--site-on-primary); font-weight: 700; border: 1px solid var(--site-primary); transition: transform .2s ease, background .2s ease; }
+.nav-cta:hover, .button:hover { transform: translateY(-2px); background: #245c4b; }
+.button.secondary { background: transparent; color: var(--site-on-background); border-color: var(--line); }
+.button.secondary:hover { background: var(--site-secondary); color: var(--site-on-secondary); }
+.hero { padding: 104px 0 88px; position: relative; }
+.hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 56px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--site-primary); background: var(--site-secondary); border-radius: 99px; padding: 8px 13px; font-size: .8rem; font-weight: 750; letter-spacing: .04em; text-transform: uppercase; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #77a63d; box-shadow: 0 0 0 4px rgba(119,166,61,.13); }
+h1, h2, h3 { font-family: var(--site-font-heading); letter-spacing: -.055em; line-height: 1.08; }
+h1 { font-size: clamp(3rem, 6vw, 5.6rem); margin: 25px 0 22px; max-width: 760px; }
+h1 em { color: var(--site-primary); font-style: normal; }
+.lead { font-size: clamp(1.05rem, 1.8vw, 1.22rem); line-height: 1.8; color: var(--muted); max-width: 630px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.microcopy { font-size: .85rem; color: var(--muted); margin-top: 23px; }
+.profile-card { background: var(--site-primary); color: white; padding: 30px; border-radius: calc(24px * var(--site-radius-scale)); min-height: 360px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.profile-card:before { content:""; position:absolute; width:260px; height:260px; border:1px solid rgba(255,255,255,.17); border-radius:50%; right:-100px; top:-80px; box-shadow:0 0 0 35px rgba(255,255,255,.04),0 0 0 70px rgba(255,255,255,.03); opacity:var(--site-decoration-opacity); }
+.initials { width: 92px; height: 92px; border-radius: 24px; background: var(--accent); color: #183c30; display: grid; place-items: center; font-size: 2rem; font-weight: 900; letter-spacing: -.08em; position: relative; }
+.profile-card h2 { font-size: 2rem; margin: 30px 0 10px; position: relative; }
+.profile-card p { color: #d7e6dc; line-height: 1.7; margin: 0; position: relative; }
+.profile-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 25px; position: relative; }
+.profile-meta span { border: 1px solid rgba(255,255,255,.25); border-radius: 99px; padding: 7px 10px; font-size: .78rem; }
+.section { padding: 88px 0; }
+.section.alt { background: var(--surface); }
+.section-head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 38px; }
+.kicker { color: var(--site-primary); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+h2.section-title { font-size: clamp(2.2rem, 4vw, 3.4rem); margin: 12px 0 0; }
+.section-intro { max-width: 470px; color: var(--muted); line-height: 1.75; margin: 0; }
+.about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; }
+.about-aside { border-left: 3px solid var(--accent); padding-left: 22px; color: var(--muted); line-height: 1.8; }
+.about-copy p { color: var(--muted); line-height: 1.9; margin-top: 0; }
+.about-copy strong { color: var(--site-on-background); }
+.skill-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.skill-card { padding: 24px; border: 1px solid var(--line); border-radius: calc(16px * var(--site-radius-scale)); background: var(--surface); transition: transform .2s ease, border-color .2s ease; }
+.skill-card:hover, .project-card:hover { transform: translateY(-4px); border-color: var(--site-primary); }
+.skill-icon { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 12px; background: var(--site-secondary); color: var(--site-primary); font-size: 1.25rem; margin-bottom: 18px; }
+.skill-card h3 { font-size: 1.2rem; letter-spacing: -.03em; margin: 0 0 9px; }
+.skill-card p { font-size: .92rem; line-height: 1.7; color: var(--muted); margin: 0; }
+.project-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+.project-card { background: var(--surface); border: 1px solid var(--line); border-radius: calc(18px * var(--site-radius-scale)); overflow: hidden; transition: transform .2s ease, border-color .2s ease; }
+.project-art { min-height: 190px; padding: 24px; background: var(--site-secondary); display: flex; align-items: center; justify-content: center; }
+.mock-window { width: 100%; max-width: 360px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; box-shadow: 0 12px 35px rgba(23,63,53,.1); }
+.mock-top { display:flex; gap:5px; border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:12px; }
+.mock-top i { display:block; width:7px; height:7px; background:#a6b7aa; border-radius:50%; }
+.mock-lines { display:grid; gap:7px; }
+.mock-lines span { height:8px; border-radius:5px; background:var(--site-secondary); }
+.mock-lines span:nth-child(2) { width:72%; }
+.mock-bars { height:48px; display:flex; align-items:end; gap:8px; margin-top:12px; }
+.mock-bars i { display:block; flex:1; background:var(--site-primary); border-radius:4px 4px 0 0; }
+.mock-bars i:nth-child(1){height:45%}.mock-bars i:nth-child(2){height:75%}.mock-bars i:nth-child(3){height:58%}.mock-bars i:nth-child(4){height:95%}.mock-bars i:nth-child(5){height:66%}
+.project-body { padding: 24px; }
+.project-type { color: var(--site-primary); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 800; }
+.project-body h3 { font-size: 1.5rem; margin: 10px 0; }
+.project-body p { color: var(--muted); line-height: 1.75; margin: 0 0 18px; }
+.tags { display:flex; flex-wrap:wrap; gap:7px; }
+.tags span { font-size:.77rem; border:1px solid var(--line); padding:6px 9px; border-radius:99px; color:var(--muted); }
+.project-note { margin-top: 20px; color: var(--muted); font-size: .9rem; line-height: 1.7; }
+.resume-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+.resume-block { border-top:1px solid var(--line); padding-top:20px; }
+.resume-block h3 { margin:0 0 18px; font-size:1.35rem; }
+.timeline-item { margin-bottom:24px; padding-left:18px; border-left:2px solid var(--line); }
+.timeline-item strong { display:block; margin-bottom:5px; }
+.timeline-item small { color:var(--site-primary); font-weight:700; }
+.timeline-item p { color:var(--muted); line-height:1.7; margin:8px 0 0; font-size:.92rem; }
+.contact-panel { background:var(--site-primary); color:white; border-radius:calc(24px * var(--site-radius-scale)); padding:clamp(28px,6vw,64px); display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; }
+.contact-panel h2 { font-size:clamp(2.4rem,4.5vw,4rem); margin:12px 0 18px; }
+.contact-panel p { color:#d8e6dc; line-height:1.8; }
+.contact-panel .kicker { color:var(--accent); }
+.contact-details { border:1px solid rgba(255,255,255,.22); border-radius:16px; padding:24px; }
+.contact-details p { margin:0 0 10px; font-size:.9rem; }
+.contact-details a { color:var(--accent); overflow-wrap:anywhere; }
+.contact-details .button { background:var(--accent); border-color:var(--accent); color:#183c30; margin-top:12px; }
+footer { padding:28px 0; color:var(--muted); font-size:.85rem; }
+.footer-row { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+footer a { color:var(--site-primary); font-weight:700; }
+.reveal { opacity:0; transform:translateY(18px); transition:opacity .6s ease,transform .6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce) { html{scroll-behavior:auto} *,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none} }
+@media (max-width: 800px) {
+  .container{width:min(100% - 32px,600px)} nav{gap:14px} nav a:not(.nav-cta){display:none}
+  .hero{padding:70px 0 60px}.hero-grid,.about-grid,.contact-panel{grid-template-columns:1fr;gap:30px}
+  .profile-card{min-height:300px}.section{padding:66px 0}.section-head{display:block}.section-intro{margin-top:18px}
+  .skill-grid{grid-template-columns:repeat(2,1fr)}.project-grid,.resume-grid{grid-template-columns:1fr}
+  .contact-panel{padding:30px}
+}
+@media (max-width: 480px) {
+  .nav{min-height:66px}.nav-cta{padding:10px 12px;font-size:.85rem}
+  h1{font-size:3.15rem}.skill-grid{grid-template-columns:1fr}.hero-actions .button{width:100%}
+  .footer-row{align-items:flex-start;flex-direction:column}
+}
+</style>
+</head>
+<body>
+<div id="site-root" data-sites-preview-theme="custom">
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="Kelvin Manlapig home">KM<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#resume">Resume</a>
+      <a class="nav-cta" href="#contact">Let's connect ↗</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="eyebrow"><span class="dot"></span> Open to IT opportunities</div>
+      <h1>Practical tech.<br><em>People-first</em> support.</h1>
+      <p class="lead">I'm Kelvin Joshua Manlapig, an IT professional focused on troubleshooting, reliable systems, and helping people work with confidence. I bring a hands-on mindset, administrative discipline, and a commitment to continuous learning.</p>
+      <div class="hero-actions">
+        <a class="button" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
+        <a class="button secondary" href="#contact">Contact me</a>
+      </div>
+      <p class="microcopy">IT Support · IT Engineering · Networking · Backend Development</p>
+    </div>
+    <aside class="profile-card reveal" aria-label="Professional introduction">
+      <div class="initials">KM</div>
+      <div>
+        <h2>Technology that works for people.</h2>
+        <p>Structured problem-solving, clear communication, and dependable support—from first diagnosis to practical resolution.</p>
+        <div class="profile-meta"><span>IT Support</span><span>Networking</span><span>Admin Operations</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+<section class="section alt" id="about">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="kicker">A little about me</div><h2 class="section-title">Curious by nature.<br>Reliable by design.</h2></div><p class="section-intro">I connect technical knowledge with the patience and organization needed to solve real workplace problems.</p></div>
+    <div class="about-grid reveal">
+      <div class="about-aside">My approach is simple: listen carefully, troubleshoot methodically, document clearly, and keep learning.</div>
+      <div class="about-copy">
+        <p>My background brings together <strong>IT support, systems administration, networking, telecommunications, backend development, and administrative operations.</strong> I enjoy understanding why something is not working and turning that into a clear, practical next step.</p>
+        <p>I'm comfortable learning new tools, supporting users, organizing information, and working within established procedures. I value teamwork, accountability, and explaining technical issues in straightforward language.</p>
+        <p>This portfolio is a growing collection of practical work and learning projects. Each case study will outline the challenge, my approach, the tools involved, and what I learned—without overstating results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="kicker">What I bring</div><h2 class="section-title">Skills built for<br>real-world support.</h2></div><p class="section-intro">A practical mix of user support, infrastructure fundamentals, software, and organized operations.</p></div>
+    <div class="skill-grid">
+      <article class="skill-card reveal"><div class="skill-icon">⌘</div><h3>IT Support & Troubleshooting</h3><p>Diagnosing common hardware, software, operating-system, and peripheral issues with a structured approach.</p></article>
+      <article class="skill-card reveal"><div class="skill-icon">⌁</div><h3>Networking & Connectivity</h3><p>Network troubleshooting fundamentals, connectivity checks, and exposure to telecommunications systems.</p></article>
+      <article class="skill-card reveal"><div class="skill-icon">▣</div><h3>Windows & Linux</h3><p>Operating-system setup and configuration, system maintenance, and practical technical support.</p></article>
+      <article class="skill-card reveal"><div class="skill-icon">⌨</div><h3>Programming & Databases</h3><p>Java fundamentals and working knowledge of relational databases including MySQL and PostgreSQL.</p></article>
+      <article class="skill-card reveal"><div class="skill-icon">◎</div><h3>Telecom & Technical Planning</h3><p>Exposure to RF planning, microwave and fiber-optic transmission planning, and AutoCAD digitization.</p></article>
+      <article class="skill-card reveal"><div class="skill-icon">▤</div><h3>Documentation & Operations</h3><p>Microsoft Office, records organization, inventory tracking, clear documentation, and administrative coordination.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section alt" id="projects">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="kicker">Selected work</div><h2 class="section-title">Projects with a<br>purpose.</h2></div><p class="section-intro">Your CV supports a strong IT and networking portfolio. These are proposed project concepts—not claimed employment projects—so add your own screenshots, files, and verified outcomes before applying.</p></div>
+    <div class="project-grid">
+      <article class="project-card reveal">
+        <div class="project-art"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-lines"><span></span><span></span></div><div class="mock-bars"><i></i><i></i><i></i><i></i><i></i></div></div></div>
+        <div class="project-body"><div class="project-type">Practice project · IT operations</div><h3>IT Help Desk Knowledge Base</h3><p>A proposed searchable guide for common support issues, including symptom checks, step-by-step troubleshooting, escalation notes, and resolution documentation.</p><div class="tags"><span>Documentation</span><span>IT Support</span><span>Process Design</span></div><p class="project-note"><strong>Showcase next:</strong> add 3–5 completed troubleshooting articles and a sample ticket workflow.</p></div>
+      </article>
+      <article class="project-card reveal">
+        <div class="project-art"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-lines"><span></span><span></span><span style="width:86%"></span></div><div style="display:flex;gap:10px;margin-top:14px"><div style="height:54px;flex:1;border-radius:7px;background:var(--site-secondary)"></div><div style="height:54px;flex:1;border-radius:7px;background:var(--site-secondary)"></div><div style="height:54px;flex:1;border-radius:7px;background:var(--site-secondary)"></div></div></div></div>
+        <div class="project-body"><div class="project-type">Practice project · Administration</div><h3>IT Asset Inventory Tracker</h3><p>A proposed spreadsheet to track devices, serial numbers, assigned users, condition, warranty dates, and maintenance history for easier asset visibility.</p><div class="tags"><span>Excel</span><span>Asset Tracking</span><span>Reporting</span></div><p class="project-note"><strong>Showcase next:</strong> include a sample dataset, filters, status indicators, and a short explanation of the workflow.</p></div>
+      </article>
+      <article class="project-card reveal">
+        <div class="project-art"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i></div><div style="display:grid;grid-template-columns:1fr 2fr;gap:10px"><div style="height:78px;border-radius:7px;background:var(--site-secondary)"></div><div class="mock-lines" style="align-content:start"><span></span><span></span><span style="width:54%"></span></div></div></div></div>
+        <div class="project-body"><div class="project-type">Practice project · Web development</div><h3>Service Request Tracker</h3><p>A small application concept for submitting support requests, viewing ticket status, and keeping request details organized for follow-up.</p><div class="tags"><span>Java</span><span>MySQL</span><span>UI Design</span></div><p class="project-note"><strong>Showcase next:</strong> build a working prototype and document the data model, validation, and test cases.</p></div>
+      </article>
+      <article class="project-card reveal">
+        <div class="project-art"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-lines"><span></span><span></span></div><div style="display:flex;gap:8px;margin-top:14px"><div style="height:12px;width:30%;border-radius:4px;background:var(--site-primary)"></div><div style="height:12px;width:48%;border-radius:4px;background:var(--accent)"></div></div></div></div>
+        <div class="project-body"><div class="project-type">Practice project · Networking</div><h3>Small Office Network Plan</h3><p>A documented sample network layout showing endpoint needs, router and switch placement, basic IP addressing, connectivity checks, and a simple recovery checklist.</p><div class="tags"><span>Networking</span><span>Diagramming</span><span>Documentation</span></div><p class="project-note"><strong>Showcase next:</strong> add a clearly labeled topology diagram, assumptions, and a verification checklist.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="section" id="resume">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="kicker">Experience & development</div><h2 class="section-title">A foundation in<br>technology and service.</h2></div><p class="section-intro">A concise snapshot of relevant experience. Add exact dates, education, and credentials from your current resume before sharing publicly.</p></div>
+    <div class="resume-grid reveal">
+      <div class="resume-block"><h3>Professional experience</h3>
+        <div class="timeline-item"><strong>Uniformed Personnel – IT and Administrative Support</strong><small>Philippine Air Force (Armed Forces of the Philippines) · March 2025 – August 2026</small><p>Troubleshot computer, hardware, software, and basic network issues; maintained office technology; supported users with Microsoft Office and connectivity; tracked IT assets; managed records and correspondence; and performed security, guard, and access-control duties.</p></div>
+        <div class="timeline-item"><strong>Junior Backend Developer</strong><small>Luen Thai International Group Phils., Inc. · August 2022 – January 2023</small><p>Developed Java client applications using MySQL and PostgreSQL and maintained the application codebase.</p></div>
+        <div class="timeline-item"><strong>IT Engineer</strong><small>Siycha Group of Companies · November 2019 – November 2021</small><p>Gathered system requirements, installed computer hardware, software, and networking systems, resolved technical issues, trained staff, maintained security software, and prepared monthly IT reports.</p></div>
+        <div class="timeline-item"><strong>IT Support Engineer</strong><small>Future Logic Corporation, Makati City · August 2018 – October 2019</small><p>Maintained IT systems, installed Windows and Linux, resolved hardware and software issues, provided remote application and network support, and coordinated connectivity with the IT Administrator.</p></div>
+      </div>
+      <div class="resume-block"><h3>Education & credentials</h3>
+        <div class="timeline-item"><strong>Bachelor of Science in Information Technology</strong><small>Major in Network Analysis and Design · Nueva Ecija University of Science and Technology · 2014–2018</small><p>Technical foundation in information technology, networking, systems, and related computing disciplines.</p></div>
+        <div class="timeline-item"><strong>TESDA National Certificate II – Computer Systems Servicing</strong><small>Issued September 2024 · Valid until September 2029</small><p>Certification in Computer Systems Servicing.</p></div>
+        <div class="timeline-item"><strong>Core Generative AI Skills</strong><small>Cisco Networking Academy · DICT-ITU DTC Initiative · Completed October 20, 2026</small><p>Certificate ID: bd8a263a-c92e-4a29-8154-be570d5d620c</p></div>
+        <a class="button secondary" href="#contact">Request my resume ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section alt" id="contact">
+  <div class="container">
+    <div class="contact-panel reveal">
+      <div><div class="kicker">Let's talk</div><h2>Have a technical challenge to solve?</h2><p>I'm interested in IT Officer, IT Support, IT Engineer, Service Desk, and technical operations roles where I can contribute, learn, and help teams work smoothly.</p><a class="button" href="mailto:manlapig.kj@gmail.com?subject=Portfolio%20Inquiry">Email me ↗</a></div>
+      <div class="contact-details"><p><strong>Email</strong><br><a href="mailto:manlapig.kj@gmail.com">manlapig.kj@gmail.com</a></p><p><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/kelvin-joshua-manlapig-262272152" target="_blank" rel="noreferrer">View my LinkedIn profile ↗</a></p><p><strong>GitHub</strong><br><a href="https://github.com/kelvinmanlapig" target="_blank" rel="noreferrer">github.com/kelvinmanlapig ↗</a></p><p><strong>Phone</strong><br>0965-227-7930</p><p><strong>Location</strong><br>Cabiao, Nueva Ecija, Philippines</p><a class="button" href="mailto:manlapig.kj@gmail.com?subject=Let's%20Connect">Start a conversation</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="container footer-row"><span>© <span id="year"></span> Kelvin Joshua Manlapig. Built with care.</span><span>Practical tech. Clear communication. <a href="#home">Back to top ↑</a></span></div></footer>
+</div>
+<script>
+// Update the footer year automatically.
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Reveal sections gently as they enter the screen; keep content visible if unsupported.
+const revealItems = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealItems.forEach((item) => observer.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add("visible"));
+}
+</script>
+</body>
+</html>
